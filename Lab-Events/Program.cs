@@ -20,13 +20,11 @@ namespace Lab_Events
             Customer mark = new Customer();
             mark.m_Name = "Mark";
 
-            comp.FireShipmentArrived("New Switches Arrived");
-
             comp.ShipmentArrived += jane.ProcessShipmentArrivedEvent;
             comp.FireShipmentArrived("New Switches Arrived");
 
             comp.ShipmentArrived += mark.ProcessShipmentArrivedEvent;
-            comp.FireShipmentArrived("New Switches Arrived");
+            comp.FireShipmentArrived("New Xbox One Arrived");
         }
     }
 }
