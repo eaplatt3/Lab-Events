@@ -10,9 +10,8 @@ namespace Lab_Events
     {
         public string m_Name { get; set; }
 
-
-
-        public event Action ShipmentArrived;
+        //public even Action ShipmentsArrived
+        public event EventHandler <ShipmentArrivedEventArgs> ShipmentArrived; //allows passing data
 
         public void FireShipmentArrived(string description)
         {
@@ -21,19 +20,20 @@ namespace Lab_Events
                 return;
             }
 
-            ShipmentArrived();
+            ShipmentArrivedEventArgs x = new ShipmentArrivedEventArgs(description);
+
+            ShipmentArrived(this, x);
 
         }
 
-        public class ShipmentArrivedEventArgs
+        public class ShipmentArrivedEventArgs : EventArgs
         {
             string m_ShipmetnArrivedDescription { get; set; }
 
 
-            public ShipmentArrivedEventArgs()
+            public ShipmentArrivedEventArgs(string description)
             {
-                m_ShipmetnArrivedDescription = "10 Tons of Metal";
-                Console.WriteLine(m_ShipmetnArrivedDescription);
+                m_ShipmetnArrivedDescription = description;
             }
 
 
