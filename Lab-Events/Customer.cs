@@ -10,9 +10,9 @@ namespace Lab_Events
     {
         public string m_Name { get; set; }
 
-        public void ProcessShipmentArrivedEvent()
+        public void ProcessShipmentArrivedEvent(Object sender, Company.ShipmentArrivedEventArgs args)
         {
-            Console.WriteLine(m_Name + "Handled ShipmentArrived event");
+            Console.WriteLine(m_Name + " Handled ShipmentArrived event " + args.m_ShipmentArrivedDescription);
         }
 
     }

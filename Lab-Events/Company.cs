@@ -28,12 +28,12 @@ namespace Lab_Events
 
         public class ShipmentArrivedEventArgs : EventArgs
         {
-            string m_ShipmetnArrivedDescription { get; set; }
+            public string m_ShipmentArrivedDescription { get; set; }
 
 
             public ShipmentArrivedEventArgs(string description)
             {
-                m_ShipmetnArrivedDescription = description;
+                m_ShipmentArrivedDescription = description;
             }
 
 
